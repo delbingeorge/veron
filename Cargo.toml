@@ -1,0 +1,28 @@
+[package]
+name = "veron"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "veron-cli"
+path = "src/bin/main.rs"
+
+[dependencies]
+rusty_v8 = "0.32.1"
+tokio = { version = "1.28", features = ["full"] }
+clap = { version = "4.3", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+env_logger = "0.10"
+anyhow = "1.0"
+thiserror = "1.0"
+
+[dev-dependencies]
+criterion = "0.5"
+mockall = "0.11"
+tempfile = "3.6"
+
+[[bench]]
+name = "runtime_bench"
+harness = false
